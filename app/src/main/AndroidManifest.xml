@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zero.androidtranningdemo" >
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="ANDROID.PERMISSION.NFC" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".contentshare.SimpleDateActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".contentshare.ShareFilesActivity"/>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/file_provider_authority"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths" />
+        </provider>
+
+        <activity android:name=".contentshare.FileSelectActivity"
+            android:label="FileSelector">
+            <intent-filter>
+                <action android:name="android.intent.action.PICK"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.OPENABLE"/>
+                <data android:mimeType="text/plain"/>
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".contentshare.NFCShareActivity" />
+        <activity android:name=".multimedia.AudioActivity" />
+        <activity android:name=".activities.PicassoActivity" />
+        <activity android:name=".activities.BitmapActivity" />
+        <activity android:name=".activities.FirstActivity" />
+        <activity android:name=".activities.SecActivity" />
+        <activity android:name=".activities.ThrActivity" />
+
+    </application>
+
+</manifest>

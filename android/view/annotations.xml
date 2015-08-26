@@ -1,0 +1,6 @@
+<root>
+  <item name='android.view.MenuItem android.view.ActionProvider getActionProvider()'>
+    <annotation name='android.support.annotation.Nullable' />
+    <annotation name='java.lang.annotation.Deprecated' />
+  </item>
+</root>

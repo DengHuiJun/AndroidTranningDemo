@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <com.zero.androidtranningdemo.myview.TitleView
+        android:id="@+id/share_files_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </com.zero.androidtranningdemo.myview.TitleView>
+
+
+    <Button
+        android:id="@+id/start_request_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请求获取分享文件" />
+
+
+    <TextView
+        android:id="@+id/show_file_name_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示选择的文件名"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidTranningDemo</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="send_to">send to</string>
+    <string name="file_provider_authority">com.zero.androidtranningdemo.fileprovider</string>
+</resources>
