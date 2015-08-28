@@ -12,6 +12,7 @@ import android.widget.ListView;
 
 import com.zero.androidtranningdemo.activities.BitmapActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
+import com.zero.androidtranningdemo.activities.FrescoActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "Picasso加载图片",
             "Bitmap",
             "测试3个Activity跳转",
+            "Fresco加载gif",
     };
 //    private ShareActionProvider mShareActionProvider;
 
@@ -106,6 +108,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             case 6:
                 AppUtils.toAnActivity(this, FirstActivity.class);
                 break;
+            case 7:
+                AppUtils.toAnActivity(this, FrescoActivity.class);
             default:
                 break;
         }
