@@ -13,7 +13,9 @@ import android.widget.ListView;
 import com.zero.androidtranningdemo.activities.BitmapActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.FrescoActivity;
+import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
+import com.zero.androidtranningdemo.activities.TakePhotoActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "Bitmap",
             "测试3个Activity跳转",
             "Fresco加载gif",
+            "管理音频播放",
+            "拍照",
     };
 //    private ShareActionProvider mShareActionProvider;
 
@@ -110,6 +114,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 7:
                 AppUtils.toAnActivity(this, FrescoActivity.class);
+                break;
+            case 8:
+                AppUtils.toAnActivity(this, ManagerAudioActivity.class);
+                break;
+            case 9:
+                AppUtils.toAnActivity(this, TakePhotoActivity.class);
             default:
                 break;
         }
