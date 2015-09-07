@@ -65,12 +65,18 @@
         <activity android:name=".multimedia.AudioActivity" />
         <activity android:name=".activities.PicassoActivity" />
         <activity android:name=".activities.BitmapActivity" />
-        <activity android:name=".activities.FirstActivity" />
+
+        <activity
+            android:name=".activities.FirstActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden"
+            />
+
         <activity android:name=".activities.SecActivity" />
         <activity android:name=".activities.ThrActivity" />
         <activity android:name=".activities.FrescoActivity" />
         <activity android:name=".activities.ManagerAudioActivity" />
         <activity android:name=".activities.TakePhotoActivity" />
+        <activity android:name=".activities.AnimationActivity" />
 
         <receiver android:name=".activities.ManagerAudioActivity$RemoteControlReceiver" >
             <intent-filter>

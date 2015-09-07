@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.zero.androidtranningdemo.activities.AnimationActivity;
 import com.zero.androidtranningdemo.activities.BitmapActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.FrescoActivity;
@@ -28,16 +29,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ListView mListView;
     private ArrayAdapter<String> mAdapter;
     private final String[] mList = {
-            "内容分享之简单数据",
-            "请求一个分享文件",
-            "通用NFC分享文件",
-            "Managing Audio Playback",
-            "Picasso加载图片",
-            "Bitmap",
-            "测试3个Activity跳转",
-            "Fresco加载gif",
-            "管理音频播放",
-            "拍照",
+            "内容分享之简单数据",  // 0
+            "请求一个分享文件",   // 1
+            "通用NFC分享文件",  // 2
+            "Managing Audio Playback",  // 3
+            "Picasso加载图片", // 4
+            "Bitmap",  // 5
+            "测试3个Activity跳转",  // 6
+            "Fresco加载gif", // 7
+            "管理音频播放", // 8
+            "拍照", // 9
+            "属性动画", // 10
     };
 //    private ShareActionProvider mShareActionProvider;
 
@@ -120,6 +122,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 9:
                 AppUtils.toAnActivity(this, TakePhotoActivity.class);
+                break;
+            case 10:
+                AppUtils.toAnActivity(this, AnimationActivity.class);
+                break;
             default:
                 break;
         }

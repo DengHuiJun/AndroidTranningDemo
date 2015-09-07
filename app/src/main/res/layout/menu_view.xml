@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 这个是在容器中央的 -->
+
+    <ImageView
+        android:id="@+id/center_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/test_anim"/>
+
+    <!-- 在中间图片的左边 -->
+    <ImageView
+        android:id="@+id/left_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toLeftOf="@id/center_iv"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"/>
+
+    <!-- 在中间图片的右边 -->
+    <ImageView
+        android:id="@+id/right_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_toRightOf="@id/center_iv"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/ic_launcher"/>
+
+    <!-- 在中间图片的上面-->
+    <ImageView
+        android:id="@+id/top_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_above="@id/center_iv"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"/>
+
+    <!-- 在中间图片的下面 -->
+    <ImageView
+        android:id="@+id/bottom_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/center_iv"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher"/>
+
+</RelativeLayout>
