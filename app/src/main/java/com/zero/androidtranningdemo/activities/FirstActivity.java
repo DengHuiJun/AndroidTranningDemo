@@ -17,7 +17,6 @@ import butterknife.OnClick;
 public class FirstActivity extends Activity {
     private static final String TAG = "FirstActivity";
 
-    private static final int GO_TO_TH_RQ = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,20 +87,11 @@ public class FirstActivity extends Activity {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         Log.d(TAG, "onConfigurationChanged");
-
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "onActivityResult First");
-////        super.onActivityResult(requestCode, resultCode, data);
-//        if (requestCode == GO_TO_TH_RQ) {
-//            Log.d("1","getReturn");
-//            if (resultCode == RESULT_OK) {
-//                Log.d("1","ok");
-//                int a = data.getIntExtra("data",0);
-//                Log.d("1","data:"+a);
-//            }
-//        }
+
     }
 }

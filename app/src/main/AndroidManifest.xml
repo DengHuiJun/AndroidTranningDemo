@@ -68,7 +68,8 @@
 
         <activity
             android:name=".activities.FirstActivity"
-            android:configChanges="orientation|keyboard|keyboardHidden"
+
+            android:configChanges="orientation|screenSize"
             />
 
         <activity android:name=".activities.SecActivity" />

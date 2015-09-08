@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "管理音频播放", // 8
             "拍照", // 9
             "属性动画", // 10
+            "学习NDK", // 11
     };
 //    private ShareActionProvider mShareActionProvider;
 
@@ -125,6 +126,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 10:
                 AppUtils.toAnActivity(this, AnimationActivity.class);
+                break;
+            case 11:
+
                 break;
             default:
                 break;
