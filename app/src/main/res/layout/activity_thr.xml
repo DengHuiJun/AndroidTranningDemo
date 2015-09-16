@@ -9,4 +9,10 @@
         android:layout_height="wrap_content"
         android:text="RETURN"/>
 
+    <TextView
+        android:id="@+id/jni_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示JNI"/>
+
 </LinearLayout>

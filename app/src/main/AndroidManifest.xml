@@ -66,11 +66,8 @@
         <activity android:name=".activities.PicassoActivity" />
         <activity android:name=".activities.BitmapActivity" />
 
-        <activity
-            android:name=".activities.FirstActivity"
-
-            android:configChanges="orientation|screenSize"
-            />
+        <activity android:name=".activities.FirstActivity"
+            android:configChanges="orientation|screenSize" />
 
         <activity android:name=".activities.SecActivity" />
         <activity android:name=".activities.ThrActivity" />

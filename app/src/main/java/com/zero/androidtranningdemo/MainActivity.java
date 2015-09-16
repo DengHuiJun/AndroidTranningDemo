@@ -17,6 +17,7 @@ import com.zero.androidtranningdemo.activities.FrescoActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
 import com.zero.androidtranningdemo.activities.TakePhotoActivity;
+import com.zero.androidtranningdemo.activities.ThrActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
@@ -128,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 AppUtils.toAnActivity(this, AnimationActivity.class);
                 break;
             case 11:
-
+                AppUtils.toAnActivity(this, ThrActivity.class);
                 break;
             default:
                 break;
