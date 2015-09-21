@@ -14,6 +14,7 @@ import com.zero.androidtranningdemo.activities.AnimationActivity;
 import com.zero.androidtranningdemo.activities.BitmapActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.FrescoActivity;
+import com.zero.androidtranningdemo.activities.GesturesActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
 import com.zero.androidtranningdemo.activities.TakePhotoActivity;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             "拍照", // 9
             "属性动画", // 10
             "学习NDK", // 11
+            "手势", // 12
     };
 //    private ShareActionProvider mShareActionProvider;
 
@@ -130,6 +132,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 break;
             case 11:
                 AppUtils.toAnActivity(this, ThrActivity.class);
+                break;
+            case 12:
+                AppUtils.toAnActivity(this, GesturesActivity.class);
                 break;
             default:
                 break;
