@@ -4,13 +4,19 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/first_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="FirstActivity"/>
+        android:text="FirstActivity" />
+
+    <EditText
+        android:id="@+id/first_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/go_to_sec_btn"
+        android:id="@+id/first_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="goToSecondActivity"/>
+        android:text="goToSecondActivity" />
 </LinearLayout>

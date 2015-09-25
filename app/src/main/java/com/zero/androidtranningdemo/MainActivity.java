@@ -13,7 +13,6 @@ import android.widget.ListView;
 import com.zero.androidtranningdemo.activities.AnimationActivity;
 import com.zero.androidtranningdemo.activities.BitmapActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
-import com.zero.androidtranningdemo.activities.FrescoActivity;
 import com.zero.androidtranningdemo.activities.GesturesActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
@@ -119,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 AppUtils.toAnActivity(this, FirstActivity.class);
                 break;
             case 7:
-                AppUtils.toAnActivity(this, FrescoActivity.class);
+
                 break;
             case 8:
                 AppUtils.toAnActivity(this, ManagerAudioActivity.class);

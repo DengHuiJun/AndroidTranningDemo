@@ -5,9 +5,12 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.zero.androidtranningdemo.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -17,6 +20,11 @@ import butterknife.OnClick;
 public class FirstActivity extends Activity {
     private static final String TAG = "FirstActivity";
 
+    @Bind(R.id.first_et)
+    EditText mEt;
+
+    @Bind(R.id.first_tv)
+    TextView mTv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +34,12 @@ public class FirstActivity extends Activity {
 
         Log.d(TAG,"onCreate First");
     }
+
+    @OnClick(R.id.first_btn)
+    public void setTextToView() {
+        mTv.setText(mEt.getText().toString());
+    }
+
 
     @Override
     protected void onStart() {
@@ -73,14 +87,6 @@ public class FirstActivity extends Activity {
     protected void onRestart() {
         super.onRestart();
         Log.d(TAG, "onRestart First");
-    }
-
-    @OnClick(R.id.go_to_sec_btn)
-    public void gotoSec() {
-        Log.d(TAG,"click btn First");
-        Intent intent = new Intent(this, SecActivity.class);
-//        startActivityForResult(intent, GO_TO_TH_RQ);
-        startActivity(intent);
     }
 
     @Override

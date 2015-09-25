@@ -78,7 +78,6 @@
 
         <activity android:name=".activities.SecActivity" />
         <activity android:name=".activities.ThrActivity" />
-        <activity android:name=".activities.FrescoActivity" />
         <activity android:name=".activities.ManagerAudioActivity" />
         <activity android:name=".activities.TakePhotoActivity" />
         <activity android:name=".activities.AnimationActivity" />
