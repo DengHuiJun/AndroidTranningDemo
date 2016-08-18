@@ -19,8 +19,8 @@ import butterknife.OnClick;
 /**
  * Created by zero on 15-8-21.
  */
-public class AudioActivity extends Activity {
-    private static final String TAG = "AudioActivity";
+public class TestServiceActivity extends Activity {
+    private static final String TAG = "TestServiceActivity";
 
     private static final String ACTION_S = "com.zero.service.TEST_SERVICE1";
 

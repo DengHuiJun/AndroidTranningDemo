@@ -15,7 +15,7 @@ import butterknife.OnClick;
 /**
  * Created by zero on 15-8-26.
  */
-public class ThrActivity extends Activity {
+public class StudyNDKActivity extends Activity {
 
     @Bind(R.id.jni_tv)
     TextView JNITv;

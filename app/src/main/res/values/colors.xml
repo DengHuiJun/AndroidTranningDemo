@@ -3,4 +3,6 @@
     <color name="title_bar_bg">#3498DB</color>
     <color name="title_bar_btn_bg">#1ABC9C</color>
     <color name="font_color">#ECF0F1</color>
+
+    <color name="main_activity_bg">#e8e8e8</color>
 </resources>

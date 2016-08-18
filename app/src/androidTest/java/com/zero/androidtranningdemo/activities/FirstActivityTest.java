@@ -2,8 +2,6 @@ package com.zero.androidtranningdemo.activities;
 
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
-import android.test.TouchUtils;
-import android.test.UiThreadTest;
 import android.test.ViewAsserts;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;

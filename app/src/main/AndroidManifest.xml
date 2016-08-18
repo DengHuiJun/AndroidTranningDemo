@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="ANDROID.PERMISSION.NFC" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
 
@@ -30,6 +29,11 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
+        </activity>
+
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -69,7 +73,7 @@
         </activity>
 
         <activity android:name=".contentshare.NFCShareActivity" />
-        <activity android:name=".multimedia.AudioActivity" />
+        <activity android:name=".multimedia.TestServiceActivity" />
         <activity android:name=".activities.PicassoActivity" />
         <activity android:name=".activities.BitmapActivity" />
 
@@ -77,7 +81,7 @@
             android:configChanges="orientation|screenSize" />
 
         <activity android:name=".activities.SecActivity" />
-        <activity android:name=".activities.ThrActivity" />
+        <activity android:name=".activities.StudyNDKActivity" />
         <activity android:name=".activities.ManagerAudioActivity" />
         <activity android:name=".activities.TakePhotoActivity" />
         <activity android:name=".activities.AnimationActivity" />
