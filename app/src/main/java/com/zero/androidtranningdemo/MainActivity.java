@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.zero.androidtranningdemo.activities.AnimationActivity;
+import com.zero.androidtranningdemo.activities.PullRefreshActivity;
 import com.zero.androidtranningdemo.activities.TestDialogFragmentActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.GesturesActivity;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
     private Context mContext;
     private RecyclerView mListRv;
-    private List<RecyclerMainItem> mItems = new ArrayList<>(14); // 添加时修改下初始大小
+    private List<RecyclerMainItem> mItems = new ArrayList<>(15); // 添加时修改下初始大小
     private MainListAdapter mAdapter;
 
     private static final int ITEM_ID_SHARE_SIMPLE_DATA = 1;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_USE_PICASSO = 5;
     private static final int ITEM_ID_TEST_BITMAP = 6;
     private static final int ITEM_ID_TEST_ACTIVITIES_INTENT = 7;
-    private static final int ITEM_ID_USE_FRESCO = 8;
+    private static final int ITEM_ID_PULL_REFRESH = 8;
     private static final int ITEM_ID_MANAGING_AUDIO_PLAY = 9;
     private static final int ITEM_ID_TAKE_PHOTO = 10;
     private static final int ITEM_ID_USE_ANIMATION = 11;
@@ -106,8 +107,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         itemTestActivities.setTitle("测试3个Activity跳转");
         mItems.add(itemTestActivities);
 
-        RecyclerMainItem itemUseFresco = new RecyclerMainItem(ITEM_ID_USE_FRESCO);
-        itemUseFresco.setTitle("Fresco加载gif");
+        RecyclerMainItem itemUseFresco = new RecyclerMainItem(ITEM_ID_PULL_REFRESH);
+        itemUseFresco.setTitle("下拉刷新控件");
         mItems.add(itemUseFresco);
 
         RecyclerMainItem itemTakePhoto = new RecyclerMainItem(ITEM_ID_TAKE_PHOTO);
@@ -200,8 +201,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
                 AppUtils.toAnActivity(this, FirstActivity.class);
                 break;
 
-            case ITEM_ID_USE_FRESCO:
-
+            case ITEM_ID_PULL_REFRESH:
+                AppUtils.toAnActivity(this, PullRefreshActivity.class);
                 break;
 
             case ITEM_ID_MANAGING_AUDIO_PLAY:

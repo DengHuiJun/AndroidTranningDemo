@@ -28,7 +28,7 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -98,13 +98,15 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activities.TimeRemindActivity"></activity>
+        <activity android:name=".activities.TimeRemindActivity" />
 
         <receiver android:name=".receiver.TimeRemindReceiver">
             <intent-filter>
                 <action android:name="com.zero.receiver.remindtime" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".activities.PullRefreshActivity"></activity>
     </application>
 
 </manifest>
