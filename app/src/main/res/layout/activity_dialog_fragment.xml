@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.zero.androidtranningdemo.myview.TitleView
+        android:id="@+id/bitmap_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </com.zero.androidtranningdemo.myview.TitleView>
+
+    <Button
+        android:id="@+id/common_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Common Dialog" />
+
+    <Button
+        android:id="@+id/custom_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Custom Dialog" />
+
+    <Button
+        android:id="@+id/picker_dialog_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Picker Dialog" />
+
+    <TextView
+        android:id="@+id/dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="show dialog content"/>
+
+</LinearLayout>

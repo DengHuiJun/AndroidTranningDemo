@@ -7,17 +7,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 
 import com.zero.androidtranningdemo.activities.AnimationActivity;
-import com.zero.androidtranningdemo.activities.BitmapActivity;
+import com.zero.androidtranningdemo.activities.TestDialogFragmentActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.GesturesActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
 import com.zero.androidtranningdemo.activities.TakePhotoActivity;
 import com.zero.androidtranningdemo.activities.StudyNDKActivity;
+import com.zero.androidtranningdemo.activities.TimeRemindActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
@@ -33,24 +32,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
     private Context mContext;
     private RecyclerView mListRv;
-    private List<RecyclerMainItem> mItems = new ArrayList<>(13); // 添加时修改下初始大小
+    private List<RecyclerMainItem> mItems = new ArrayList<>(14); // 添加时修改下初始大小
     private MainListAdapter mAdapter;
-
-    private final String[] mList = {
-            "内容分享之简单数据",  // 0
-            "请求一个分享文件",   // 1
-            "通用NFC分享文件",  // 2
-            "测试Service",  // 3
-            "Picasso加载图片", // 4
-            "Bitmap",  // 5
-            "测试3个Activity跳转",  // 6
-            "Fresco加载gif", // 7
-            "管理音频播放", // 8
-            "拍照", // 9
-            "属性动画", // 10
-            "学习NDK", // 11
-            "手势", // 12
-    };
 
     private static final int ITEM_ID_SHARE_SIMPLE_DATA = 1;
     private static final int ITEM_ID_REQUEST_SHARE_FILE = 2;
@@ -65,6 +48,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_USE_ANIMATION = 11;
     private static final int ITEM_ID_STUDY_NDK = 12;
     private static final int ITEM_ID_USE_SIMPLE_GESTURES = 13;
+    private static final int ITEM_ID_DIALOG_FRAGMENT = 14;
+    private static final int ITEM_ID_TEST_SCHDULER = 15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -137,10 +122,17 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         itemStudyNDK.setTitle("学习NDK");
         mItems.add(itemStudyNDK);
 
-        RecyclerMainItem itemUseGesture = new RecyclerMainItem((ITEM_ID_USE_SIMPLE_GESTURES));
+        RecyclerMainItem itemUseGesture = new RecyclerMainItem(ITEM_ID_USE_SIMPLE_GESTURES);
         itemUseGesture.setTitle("手势");
         mItems.add(itemUseGesture);
 
+        RecyclerMainItem itemDialogFragment = new RecyclerMainItem(ITEM_ID_DIALOG_FRAGMENT);
+        itemDialogFragment.setTitle("DialogFragment");
+        mItems.add(itemDialogFragment);
+
+        RecyclerMainItem testSchdulerItem = new RecyclerMainItem(ITEM_ID_TEST_SCHDULER);
+        testSchdulerItem.setTitle("时间提醒");
+        mItems.add(testSchdulerItem);
 //        sort(mItems);
     }
 
@@ -184,42 +176,62 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
             case ITEM_ID_SHARE_SIMPLE_DATA:
                 AppUtils.toAnActivity(this, SimpleDateActivity.class);
                 break;
+
             case ITEM_ID_REQUEST_SHARE_FILE:
                 AppUtils.toAnActivity(this, ShareFilesActivity.class);
                 break;
+
             case ITEM_ID_NFC_SHARE_FILE:
                 AppUtils.toAnActivity(this, NFCShareActivity.class);
                 break;
+
             case ITEM_ID_TEST_SERVICE:
                 AppUtils.toAnActivity(this, TestServiceActivity.class);
                 break;
+
             case ITEM_ID_USE_PICASSO:
                 AppUtils.toAnActivity(this, PicassoActivity.class);
                 break;
+
             case ITEM_ID_TEST_BITMAP:
-                AppUtils.toAnActivity(this, BitmapActivity.class);
+
                 break;
             case ITEM_ID_TEST_ACTIVITIES_INTENT:
                 AppUtils.toAnActivity(this, FirstActivity.class);
                 break;
+
             case ITEM_ID_USE_FRESCO:
 
                 break;
+
             case ITEM_ID_MANAGING_AUDIO_PLAY:
                 AppUtils.toAnActivity(this, ManagerAudioActivity.class);
                 break;
+
             case ITEM_ID_TAKE_PHOTO:
                 AppUtils.toAnActivity(this, TakePhotoActivity.class);
                 break;
+
             case ITEM_ID_USE_ANIMATION:
                 AppUtils.toAnActivity(this, AnimationActivity.class);
                 break;
+
             case ITEM_ID_STUDY_NDK:
                 AppUtils.toAnActivity(this, StudyNDKActivity.class);
                 break;
+
             case ITEM_ID_USE_SIMPLE_GESTURES:
                 AppUtils.toAnActivity(this, GesturesActivity.class);
                 break;
+
+            case ITEM_ID_DIALOG_FRAGMENT:
+                AppUtils.toAnActivity(this, TestDialogFragmentActivity.class);
+                break;
+
+            case ITEM_ID_TEST_SCHDULER:
+                AppUtils.toAnActivity(this, TimeRemindActivity.class);
+                break;
+
             default:
                 break;
         }

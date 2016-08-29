@@ -26,7 +26,6 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ItemVi
     public MainListAdapter(Context context, List<RecyclerMainItem> items) {
         this.context = context;
         this.items = items;
-
         mItemClickListener = (OnMainItemClickListener) context;
     }
 

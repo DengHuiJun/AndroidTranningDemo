@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zero.androidtranningdemo" >
+    package="com.zero.androidtranningdemo">
 
     <uses-permission android:name="android.permission.NFC" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
 
     <instrumentation
@@ -15,93 +15,96 @@
     <uses-feature
         android:name="android.hardware.nfc"
         android:required="false" />
-
-    <uses-feature android:name="android.hardware.camera"
+    <uses-feature
+        android:name="android.hardware.camera"
         android:required="true" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        >
+        android:theme="@style/AppTheme">
         <uses-library android:name="android.test.runner" />
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
-        </activity>
 
         <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"></activity>
+        <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme" >
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".contentshare.SimpleDateActivity">
+        <activity android:name=".contentshare.SimpleDateActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".contentshare.ShareFilesActivity"/>
+        <activity android:name=".contentshare.ShareFilesActivity" />
 
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="@string/file_provider_authority"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
         </provider>
 
-        <activity android:name=".contentshare.FileSelectActivity"
+        <activity
+            android:name=".contentshare.FileSelectActivity"
             android:label="FileSelector">
             <intent-filter>
-                <action android:name="android.intent.action.PICK"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.OPENABLE"/>
-                <data android:mimeType="text/plain"/>
-                <data android:mimeType="image/*"/>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.OPENABLE" />
+
+                <data android:mimeType="text/plain" />
+                <data android:mimeType="image/*" />
             </intent-filter>
         </activity>
-
         <activity android:name=".contentshare.NFCShareActivity" />
         <activity android:name=".multimedia.TestServiceActivity" />
         <activity android:name=".activities.PicassoActivity" />
-        <activity android:name=".activities.BitmapActivity" />
-
-        <activity android:name=".activities.FirstActivity"
+        <activity android:name=".activities.TestDialogFragmentActivity" />
+        <activity
+            android:name=".activities.FirstActivity"
             android:configChanges="orientation|screenSize" />
-
         <activity android:name=".activities.SecActivity" />
         <activity android:name=".activities.StudyNDKActivity" />
         <activity android:name=".activities.ManagerAudioActivity" />
         <activity android:name=".activities.TakePhotoActivity" />
         <activity android:name=".activities.AnimationActivity" />
-
         <activity android:name=".activities.GesturesActivity" />
-
-
 
         <service android:name=".service.TestService1">
             <intent-filter>
-                <action android:name="com.zero.service.TEST_SERVICE1"/>
+                <action android:name="com.zero.service.TEST_SERVICE1" />
             </intent-filter>
         </service>
 
-        <receiver android:name=".activities.ManagerAudioActivity$RemoteControlReceiver" >
+        <receiver android:name=".activities.ManagerAudioActivity$RemoteControlReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.MEDIA_BUTTON" />
             </intent-filter>
         </receiver>
 
+        <activity android:name=".activities.TimeRemindActivity"></activity>
+
+        <receiver android:name=".receiver.TimeRemindReceiver">
+            <intent-filter>
+                <action android:name="com.zero.receiver.remindtime" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

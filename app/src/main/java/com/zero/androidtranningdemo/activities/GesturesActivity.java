@@ -3,6 +3,7 @@ package com.zero.androidtranningdemo.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -39,7 +40,6 @@ public class GesturesActivity extends Activity {
 
         mgListener = new MyGestureListener();
         aListener = new ActivityGestureListener();
-//        mGd = new GestureDetector(this, mgListener);
         mGd = new GestureDetector(this, aListener);
 
     }
@@ -90,14 +90,19 @@ public class GesturesActivity extends Activity {
 
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float v, float v1) {
-            if(e1.getY() - e2.getY() > MIN_MOVE){
-                startActivity(new Intent(GesturesActivity.this, GesturesActivity.class));
-                Toast.makeText(GesturesActivity.this, "通过手势启动Activity", Toast.LENGTH_SHORT).show();
-            }else if(e1.getY() - e2.getY()  < MIN_MOVE){
-                finish();
-                Toast.makeText(GesturesActivity.this,"通过手势关闭Activity",Toast.LENGTH_SHORT).show();
+            if (e1.getY() - e2.getY() > MIN_MOVE) {
+                Snackbar.make(mTitleView, "上滑操作", Snackbar.LENGTH_LONG).show();
+            } else if (e1.getY() - e2.getY()  < MIN_MOVE) {
+                Snackbar.make(mTitleView, "下滑操作", Snackbar.LENGTH_LONG).show();
             }
             return true;
         }
+    }
+
+    /**
+     * 绘制一条滑动的线
+     */
+    private void drawLine() {
+
     }
 }

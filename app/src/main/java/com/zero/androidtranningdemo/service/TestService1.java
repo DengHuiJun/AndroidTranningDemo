@@ -20,8 +20,8 @@ public class TestService1 extends Service {
     private boolean quit = false;
 
     private  MyBinder mBinder = new MyBinder();
-    public class MyBinder extends Binder
-    {
+
+    public class MyBinder extends Binder {
         public int getCount()
         {
             return count;
@@ -42,16 +42,14 @@ public class TestService1 extends Service {
         localBuilder.setContentText("正在计时中。。。");
         startForeground(1, localBuilder.getNotification());
 
-        new Thread()
-        {
-            public void run()
-            {
-                while(!quit)
-                {
-                    try
-                    {
+        new Thread() {
+            public void run() {
+                while(!quit) {
+                    try {
                         Thread.sleep(1000);
-                    }catch(InterruptedException e){e.printStackTrace();}
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     count++;
                 }
             }
