@@ -4,11 +4,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zero.androidtranningdemo.R;
+import com.zero.androidtranningdemo.utils.AppUtils;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -19,6 +26,8 @@ import butterknife.OnClick;
  */
 public class FirstActivity extends Activity {
     private static final String TAG = "FirstActivity";
+
+    private static final String EMOJI_PATTERN = "[\\ud83c\\udc00-\\ud83c\\udfff]|[\\ud83d\\udc00-\\ud83d\\udfff]|[\\u2600-\\u27ff]";
 
     @Bind(R.id.first_et)
     EditText mEt;
@@ -32,6 +41,7 @@ public class FirstActivity extends Activity {
         setContentView(R.layout.activity_first);
         ButterKnife.bind(this);
 
+        mEt.setFilters(emojiFilters);
         Log.d(TAG,"onCreate First");
     }
 
@@ -100,4 +110,21 @@ public class FirstActivity extends Activity {
         Log.d(TAG, "onActivityResult First");
 
     }
+
+    private InputFilter emojiFilter = new InputFilter() {
+
+        Pattern emoji = Pattern.compile(EMOJI_PATTERN, Pattern.UNICODE_CASE | Pattern.CASE_INSENSITIVE);
+
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            Matcher emojiMatcher = emoji.matcher(source);
+            if (emojiMatcher.find()) {
+                AppUtils.showShortToast(FirstActivity.this, "不支持Emoji");
+                return "";
+            }
+            return null;
+        }
+    };
+
+    private InputFilter[] emojiFilters = { emojiFilter };
 }

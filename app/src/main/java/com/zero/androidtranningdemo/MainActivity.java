@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.zero.androidtranningdemo.activities.AnimationActivity;
+import com.zero.androidtranningdemo.activities.DragHelperActivity;
 import com.zero.androidtranningdemo.activities.PullRefreshActivity;
 import com.zero.androidtranningdemo.activities.TestDialogFragmentActivity;
 import com.zero.androidtranningdemo.activities.FirstActivity;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
     private Context mContext;
     private RecyclerView mListRv;
-    private List<RecyclerMainItem> mItems = new ArrayList<>(15); // 添加时修改下初始大小
+    private List<RecyclerMainItem> mItems = new ArrayList<>(19); // 添加时修改下初始大小
     private MainListAdapter mAdapter;
 
     private static final int ITEM_ID_SHARE_SIMPLE_DATA = 1;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_USE_SIMPLE_GESTURES = 13;
     private static final int ITEM_ID_DIALOG_FRAGMENT = 14;
     private static final int ITEM_ID_TEST_SCHDULER = 15;
+    private static final int ITEM_ID_TEST_VIEW_DRAG_HELPER = 16;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -134,7 +136,11 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         RecyclerMainItem testSchdulerItem = new RecyclerMainItem(ITEM_ID_TEST_SCHDULER);
         testSchdulerItem.setTitle("时间提醒");
         mItems.add(testSchdulerItem);
-//        sort(mItems);
+
+        RecyclerMainItem viewDragHelperItem = new RecyclerMainItem(ITEM_ID_TEST_VIEW_DRAG_HELPER);
+        viewDragHelperItem.setTitle("滑动测试");
+        mItems.add(viewDragHelperItem);
+
     }
 
     private void sort(List<RecyclerMainItem> items) {
@@ -231,6 +237,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
             case ITEM_ID_TEST_SCHDULER:
                 AppUtils.toAnActivity(this, TimeRemindActivity.class);
+                break;
+
+            case ITEM_ID_TEST_VIEW_DRAG_HELPER:
+                AppUtils.toAnActivity(this, DragHelperActivity.class);
                 break;
 
             default:

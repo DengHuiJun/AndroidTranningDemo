@@ -106,7 +106,8 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activities.PullRefreshActivity"></activity>
+        <activity android:name=".activities.PullRefreshActivity" />
+        <activity android:name=".activities.DragHelperActivity"></activity>
     </application>
 
 </manifest>
