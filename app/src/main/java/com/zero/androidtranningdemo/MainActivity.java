@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.zero.androidtranningdemo.activities.AnimationActivity;
 import com.zero.androidtranningdemo.activities.DragHelperActivity;
@@ -22,6 +23,7 @@ import com.zero.androidtranningdemo.activities.TimeRemindActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
+import com.zero.androidtranningdemo.glide.GlideActivity;
 import com.zero.androidtranningdemo.multimedia.TestServiceActivity;
 import com.zero.androidtranningdemo.utils.AppUtils;
 
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
     private Context mContext;
     private RecyclerView mListRv;
-    private List<RecyclerMainItem> mItems = new ArrayList<>(19); // 添加时修改下初始大小
+    private List<RecyclerMainItem> mItems = new ArrayList<>(20); // 添加时修改下初始大小
     private MainListAdapter mAdapter;
 
     private static final int ITEM_ID_SHARE_SIMPLE_DATA = 1;
@@ -62,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         findView();
         initItems();
 
+        View headerView = getLayoutInflater().inflate(R.layout.main_header, null);
+
         mListRv.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
         mAdapter = new MainListAdapter(mContext, mItems);
         mListRv.setAdapter(mAdapter);
@@ -75,9 +79,20 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
+                mAdapter.setIsAnima(false);
             }
         });
+
+        mAdapter.setHeaderView(headerView);
+    }
+
+    private void enterEditMode() {
+        mAdapter.setEditMode(true);
+    }
+
+    private void exitEditMode() {
+        mAdapter.setEditMode(false);
+
     }
 
     private void initItems() {
@@ -102,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         mItems.add(itemUsePicasso);
 
         RecyclerMainItem itemTestBitmap = new RecyclerMainItem(ITEM_ID_TEST_BITMAP);
-        itemTestBitmap.setTitle("Bitmap");
+        itemTestBitmap.setTitle("Glide用法测试");
         mItems.add(itemTestBitmap);
 
         RecyclerMainItem itemTestActivities = new RecyclerMainItem(ITEM_ID_TEST_ACTIVITIES_INTENT);
@@ -173,6 +188,13 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.menu_item_share) {
+            // TODO 编辑模式
+            if (mAdapter.getEditMode()) {
+                mAdapter.setEditMode(false);
+            } else {
+                mAdapter.setEditMode(true);
+            }
+
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -201,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
                 break;
 
             case ITEM_ID_TEST_BITMAP:
-
+                AppUtils.toAnActivity(this, GlideActivity.class);
                 break;
             case ITEM_ID_TEST_ACTIVITIES_INTENT:
                 AppUtils.toAnActivity(this, FirstActivity.class);

@@ -107,7 +107,8 @@
         </receiver>
 
         <activity android:name=".activities.PullRefreshActivity" />
-        <activity android:name=".activities.DragHelperActivity"></activity>
+        <activity android:name=".activities.DragHelperActivity" />
+        <activity android:name=".glide.GlideActivity"></activity>
     </application>
 
 </manifest>
