@@ -1,9 +1,9 @@
 package com.zero.androidtranningdemo.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.zero.androidtranningdemo.BaseActionBarActivity;
 import com.zero.androidtranningdemo.R;
 import com.zero.androidtranningdemo.fragment.TimePickDialogFragment;
 
@@ -11,7 +11,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TimeRemindActivity extends AppCompatActivity {
+public class TimeRemindActivity extends BaseActionBarActivity {
 
     @Bind(R.id.remind_time_tv)
     TextView timeTv;
@@ -22,6 +22,7 @@ public class TimeRemindActivity extends AppCompatActivity {
         setContentView(R.layout.activity_time_remind);
         ButterKnife.bind(this);
 
+        setTitleText("时间提醒");
 
     }
 

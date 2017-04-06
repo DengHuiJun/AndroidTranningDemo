@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BaseTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
     </style>
 
@@ -10,6 +10,16 @@
         <item name="android:windowBackground">@drawable/splash_bg</item>
         <item name="android:windowFullscreen">true</item>
         <!-- <item name="android:windowIsTranslucent">true</item> --> <!-- 透明背景不要了 -->
+    </style>
+
+    <style name="custom_action_bar_back_iv">
+        <item name="android:layout_width">10dip</item>
+        <item name="android:layout_height">17dip</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:duplicateParentState">true</item>
+        <item name="android:scaleType">fitXY</item>
+        <item name="android:src">@mipmap/ic_back</item>
+        <item name="android:visibility">gone</item>
     </style>
 
 </resources>
