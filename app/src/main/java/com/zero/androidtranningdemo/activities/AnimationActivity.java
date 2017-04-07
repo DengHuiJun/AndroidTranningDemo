@@ -23,8 +23,6 @@ public class AnimationActivity extends Activity {
         setContentView(R.layout.activity_animation);
         ButterKnife.bind(this);
 
-
-        AsyncTask asyncTask;
     }
 
 

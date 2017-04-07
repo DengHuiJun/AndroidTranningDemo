@@ -108,7 +108,11 @@
 
         <activity android:name=".activities.PullRefreshActivity" />
         <activity android:name=".activities.DragHelperActivity" />
-        <activity android:name=".glide.GlideActivity"></activity>
+        <activity android:name=".glide.GlideActivity" />
+
+        <service
+            android:name=".service.ScheduleService"
+            android:exported="false"/>
     </application>
 
 </manifest>
