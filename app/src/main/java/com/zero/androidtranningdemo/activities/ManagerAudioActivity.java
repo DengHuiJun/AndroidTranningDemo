@@ -77,7 +77,7 @@ public class ManagerAudioActivity extends Activity {
 //        am.registerMediaButtonEventReceiver(RemoteControlReceiver);
     }
 
-    public class RemoteControlReceiver extends BroadcastReceiver {
+    public static class RemoteControlReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (Intent.ACTION_MEDIA_BUTTON.equals(intent.getAction())) {
@@ -85,7 +85,7 @@ public class ManagerAudioActivity extends Activity {
                 KeyEvent event = (KeyEvent)intent.getParcelableExtra(Intent.EXTRA_KEY_EVENT);
                 if (KeyEvent.KEYCODE_MEDIA_PLAY == event.getKeyCode()) {
                     // Handle key press.
-                    Toast.makeText(mContext, "Handle key press", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Handle key press", Toast.LENGTH_SHORT).show();
                 }
             }
         }

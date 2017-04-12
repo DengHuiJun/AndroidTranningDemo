@@ -1,34 +1,68 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
-
     defaultConfig {
         applicationId "com.zero.androidtranningdemo"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-
         ndk {
 
         }
 
     }
-    buildTypes {
+
+    signingConfigs {
+        tDebug {
+            storeFile file("debug.jks")
+            keyAlias "aisa"
+            keyPassword "123456"
+            storePassword "123456"
+        }
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            keyAlias '11'
+            keyPassword 'a2426872'
+            storeFile file('/home/zero/newkey.jks')
+            storePassword 'a2426872'
         }
     }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.tDebug
+            testCoverageEnabled true
+        }
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
     lintOptions {
         disable 'InvalidPackage'
+    }
+
+    productFlavors {
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/BaiduLBS_Android.jar')
     compile 'com.android.support:appcompat-v7:24.0.0'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
@@ -36,6 +70,5 @@ dependencies {
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
-
-
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }

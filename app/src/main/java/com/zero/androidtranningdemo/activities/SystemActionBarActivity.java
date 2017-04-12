@@ -1,6 +1,5 @@
 package com.zero.androidtranningdemo.activities;
 
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
@@ -12,9 +11,10 @@ import com.zero.androidtranningdemo.R;
 import butterknife.ButterKnife;
 
 /**
+ * 沉浸式尝试
  * Created by zero on 15-9-1.
  */
-public class TakePhotoActivity extends AppCompatActivity {
+public class SystemActionBarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

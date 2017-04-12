@@ -17,9 +17,10 @@ import com.zero.androidtranningdemo.activities.FirstActivity;
 import com.zero.androidtranningdemo.activities.GesturesActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
-import com.zero.androidtranningdemo.activities.TakePhotoActivity;
+import com.zero.androidtranningdemo.activities.SystemActionBarActivity;
 import com.zero.androidtranningdemo.activities.StudyNDKActivity;
 import com.zero.androidtranningdemo.activities.TimeRemindActivity;
+import com.zero.androidtranningdemo.bdlbs.LBSActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_DIALOG_FRAGMENT = 14;
     private static final int ITEM_ID_TEST_SCHDULER = 15;
     private static final int ITEM_ID_TEST_VIEW_DRAG_HELPER = 16;
+    private static final int ITEM_ID_LBS = 17;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +158,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         viewDragHelperItem.setTitle("滑动测试");
         mItems.add(viewDragHelperItem);
 
+        RecyclerMainItem lbsItem = new RecyclerMainItem(ITEM_ID_LBS);
+        lbsItem.setTitle("百度定位");
+        mItems.add(lbsItem);
+
     }
 
     private void sort(List<RecyclerMainItem> items) {
@@ -238,7 +244,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
                 break;
 
             case ITEM_ID_TAKE_PHOTO:
-                AppUtils.toAnActivity(this, TakePhotoActivity.class);
+                AppUtils.toAnActivity(this, SystemActionBarActivity.class);
                 break;
 
             case ITEM_ID_USE_ANIMATION:
@@ -263,6 +269,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
             case ITEM_ID_TEST_VIEW_DRAG_HELPER:
                 AppUtils.toAnActivity(this, DragHelperActivity.class);
+                break;
+
+            case ITEM_ID_LBS:
+                AppUtils.toAnActivity(this, LBSActivity.class);
                 break;
 
             default:
