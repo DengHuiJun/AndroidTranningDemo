@@ -1,10 +1,11 @@
 package com.zero.androidtranningdemo.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.zero.androidtranningdemo.BaseActionBarActivity;
+import com.zero.androidtranningdemo.BuildConfig;
 import com.zero.androidtranningdemo.R;
 
 import butterknife.ButterKnife;
@@ -13,15 +14,15 @@ import butterknife.OnClick;
 /**
  * Created by zero on 15-8-26.
  */
-public class SecActivity extends Activity {
-    private static final String TAG = "FirstActivity";
+public class CommonTestActivity extends BaseActionBarActivity {
+    private static final String TAG = "FilterEmojiActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sec);
         ButterKnife.bind(this);
-        Log.d(TAG, "onCreate Sec");
+        Log.d(TAG, "onCreate Sec : " + BuildConfig.APPLICATION_ID);
     }
 
     @OnClick(R.id.go_to_thr_btn)

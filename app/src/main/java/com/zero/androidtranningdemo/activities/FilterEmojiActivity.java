@@ -9,7 +9,6 @@ import android.text.Spanned;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.zero.androidtranningdemo.R;
 import com.zero.androidtranningdemo.utils.AppUtils;
@@ -22,10 +21,11 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
+ * 过滤emoji表情
  * Created by zero on 15-8-26.
  */
-public class FirstActivity extends Activity {
-    private static final String TAG = "FirstActivity";
+public class FilterEmojiActivity extends Activity {
+    private static final String TAG = "FilterEmojiActivity";
 
     private static final String EMOJI_PATTERN = "[\\ud83c\\udc00-\\ud83c\\udfff]|[\\ud83d\\udc00-\\ud83d\\udfff]|[\\u2600-\\u27ff]";
 
@@ -119,7 +119,7 @@ public class FirstActivity extends Activity {
         public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
             Matcher emojiMatcher = emoji.matcher(source);
             if (emojiMatcher.find()) {
-                AppUtils.showShortToast(FirstActivity.this, "不支持Emoji");
+                AppUtils.showShortToast(FilterEmojiActivity.this, "不支持Emoji");
                 return "";
             }
             return null;

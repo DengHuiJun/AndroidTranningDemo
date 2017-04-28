@@ -15,15 +15,15 @@ import com.zero.androidtranningdemo.R;
 /**
  * Created by zero on 15-9-21.
  */
-public class FirstActivityTest extends ActivityInstrumentationTestCase2<FirstActivity> {
+public class FilterEmojiActivityTest extends ActivityInstrumentationTestCase2<FilterEmojiActivity> {
 
     // 构造函数是由测试用的Runner调用，用于初始化测试类的。
-    public FirstActivityTest() {
-        super(FirstActivity.class);
+    public FilterEmojiActivityTest() {
+        super(FilterEmojiActivity.class);
     }
 
     private Instrumentation mInstrumentation; // 我们可以将它理解为一种没有图形界面的，具有启动能力的，用于监控其他类(用Target Package声明)的工具类
-    private FirstActivity mActivity;
+    private FilterEmojiActivity mActivity;
     private TextView mTv;
     private EditText mEt;
     private Button mBtn;

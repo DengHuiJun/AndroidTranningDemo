@@ -12,8 +12,9 @@ import android.view.View;
 import com.zero.androidtranningdemo.activities.AnimationActivity;
 import com.zero.androidtranningdemo.activities.DragHelperActivity;
 import com.zero.androidtranningdemo.activities.PullRefreshActivity;
+import com.zero.androidtranningdemo.activities.CommonTestActivity;
 import com.zero.androidtranningdemo.activities.TestDialogFragmentActivity;
-import com.zero.androidtranningdemo.activities.FirstActivity;
+import com.zero.androidtranningdemo.activities.FilterEmojiActivity;
 import com.zero.androidtranningdemo.activities.GesturesActivity;
 import com.zero.androidtranningdemo.activities.ManagerAudioActivity;
 import com.zero.androidtranningdemo.activities.PicassoActivity;
@@ -40,13 +41,13 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private List<RecyclerMainItem> mItems = new ArrayList<>(20); // 添加时修改下初始大小
     private MainListAdapter mAdapter;
 
-    private static final int ITEM_ID_SHARE_SIMPLE_DATA = 1;
+    private static final int ITEM_ID_SHARE_SIMPLE_DATA = 18;
     private static final int ITEM_ID_REQUEST_SHARE_FILE = 2;
     private static final int ITEM_ID_NFC_SHARE_FILE = 3;
     private static final int ITEM_ID_TEST_SERVICE = 4;
     private static final int ITEM_ID_USE_PICASSO = 5;
     private static final int ITEM_ID_TEST_BITMAP = 6;
-    private static final int ITEM_ID_TEST_ACTIVITIES_INTENT = 7;
+    private static final int ITEM_ID_TEST_FILTER_EMOJI = 7;
     private static final int ITEM_ID_PULL_REFRESH = 8;
     private static final int ITEM_ID_MANAGING_AUDIO_PLAY = 9;
     private static final int ITEM_ID_TAKE_PHOTO = 10;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_TEST_SCHDULER = 15;
     private static final int ITEM_ID_TEST_VIEW_DRAG_HELPER = 16;
     private static final int ITEM_ID_LBS = 17;
+    private static final int ITEM_ID_COMMON_TEST = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         itemTestBitmap.setTitle("Glide用法测试");
         mItems.add(itemTestBitmap);
 
-        RecyclerMainItem itemTestActivities = new RecyclerMainItem(ITEM_ID_TEST_ACTIVITIES_INTENT);
-        itemTestActivities.setTitle("测试3个Activity跳转");
+        RecyclerMainItem itemTestActivities = new RecyclerMainItem(ITEM_ID_TEST_FILTER_EMOJI);
+        itemTestActivities.setTitle("过滤Emoji表情");
         mItems.add(itemTestActivities);
 
         RecyclerMainItem itemUseFresco = new RecyclerMainItem(ITEM_ID_PULL_REFRESH);
@@ -131,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         mItems.add(itemUseFresco);
 
         RecyclerMainItem itemTakePhoto = new RecyclerMainItem(ITEM_ID_TAKE_PHOTO);
-        itemTakePhoto.setTitle("拍照");
+        itemTakePhoto.setTitle("拍照功能");
         mItems.add(itemTakePhoto);
 
         RecyclerMainItem itemUseAnimation = new RecyclerMainItem(ITEM_ID_USE_ANIMATION);
@@ -162,6 +164,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         lbsItem.setTitle("百度定位");
         mItems.add(lbsItem);
 
+        RecyclerMainItem commonItem = new RecyclerMainItem(ITEM_ID_COMMON_TEST);
+        commonItem.setTitle("公共测试");
+        mItems.add(commonItem);
+
     }
 
     private void sort(List<RecyclerMainItem> items) {
@@ -173,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         Arrays.sort(keys);
         List<RecyclerMainItem> sortItems = new ArrayList<>(len);
         for (int i=0; i<len; i++) {
-//            sortItems.add(2);
+//            sortItems.add(ite);
         }
 
     }
@@ -231,8 +237,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
             case ITEM_ID_TEST_BITMAP:
                 AppUtils.toAnActivity(this, GlideActivity.class);
                 break;
-            case ITEM_ID_TEST_ACTIVITIES_INTENT:
-                AppUtils.toAnActivity(this, FirstActivity.class);
+            case ITEM_ID_TEST_FILTER_EMOJI:
+                AppUtils.toAnActivity(this, FilterEmojiActivity.class);
                 break;
 
             case ITEM_ID_PULL_REFRESH:
@@ -273,6 +279,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
             case ITEM_ID_LBS:
                 AppUtils.toAnActivity(this, LBSActivity.class);
+                break;
+
+            case ITEM_ID_COMMON_TEST:
+                AppUtils.toAnActivity(this, CommonTestActivity.class);
                 break;
 
             default:

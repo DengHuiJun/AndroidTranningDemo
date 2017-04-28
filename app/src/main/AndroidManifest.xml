@@ -97,9 +97,9 @@
         <activity android:name=".activities.PicassoActivity" />
         <activity android:name=".activities.TestDialogFragmentActivity" />
         <activity
-            android:name=".activities.FirstActivity"
+            android:name=".activities.FilterEmojiActivity"
             android:configChanges="orientation|screenSize" />
-        <activity android:name=".activities.SecActivity" />
+        <activity android:name=".activities.CommonTestActivity" />
         <activity android:name=".activities.StudyNDKActivity" />
         <activity android:name=".activities.ManagerAudioActivity" />
         <activity android:name=".activities.SystemActionBarActivity" />
