@@ -31,6 +31,7 @@ import com.zero.androidtranningdemo.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements MainListAdapter.OnMainItemClickListener {
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         View headerView = getLayoutInflater().inflate(R.layout.main_header, null);
 
         mListRv.setLayoutManager(new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL));
-        mAdapter = new MainListAdapter(mContext, mItems);
+        mAdapter = new MainListAdapter(mContext, sort(mItems));
         mListRv.setAdapter(mAdapter);
         mListRv.addItemDecoration(new SpacesItemDecoration(16));
 
@@ -96,7 +97,6 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
     private void exitEditMode() {
         mAdapter.setEditMode(false);
-
     }
 
     private void initItems() {
@@ -167,10 +167,9 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         RecyclerMainItem commonItem = new RecyclerMainItem(ITEM_ID_COMMON_TEST);
         commonItem.setTitle("公共测试");
         mItems.add(commonItem);
-
     }
 
-    private void sort(List<RecyclerMainItem> items) {
+    private List<RecyclerMainItem> sort(List<RecyclerMainItem> items) {
         int len = items.size();
         int[] keys = new int[len];
         for(int i=0; i<len; i++) {
@@ -179,9 +178,15 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         Arrays.sort(keys);
         List<RecyclerMainItem> sortItems = new ArrayList<>(len);
         for (int i=0; i<len; i++) {
-//            sortItems.add(ite);
+            for (RecyclerMainItem item : items) {
+                if (item.getId() == keys[i]) {
+                    sortItems.add(item);
+                    items.remove(item);
+                    break;
+                }
+            }
         }
-
+        return sortItems;
     }
 
     private void findView() {

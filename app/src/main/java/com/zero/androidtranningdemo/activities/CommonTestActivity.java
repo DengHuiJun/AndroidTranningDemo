@@ -7,9 +7,9 @@ import android.util.Log;
 import com.zero.androidtranningdemo.BaseActionBarActivity;
 import com.zero.androidtranningdemo.BuildConfig;
 import com.zero.androidtranningdemo.R;
+import com.zero.androidtranningdemo.fragment.BlankFragment;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by zero on 15-8-26.
@@ -20,15 +20,16 @@ public class CommonTestActivity extends BaseActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sec);
+        setContentView(R.layout.activity_common_test);
         ButterKnife.bind(this);
         Log.d(TAG, "onCreate Sec : " + BuildConfig.APPLICATION_ID);
-    }
 
-    @OnClick(R.id.go_to_thr_btn)
-    public void goToThrid() {
-        Log.d(TAG, "click btn Sec");
-        finish();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.content, BlankFragment.newInstance("",""))
+                    .addToBackStack(null)
+                    .commit();
+        }
+
     }
 
     @Override
