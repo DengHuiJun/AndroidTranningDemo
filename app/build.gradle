@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.denghui.time'
+apply plugin: 'me.denghui.cleaner'
 
 android {
 
@@ -90,4 +90,9 @@ dependencies {
 
     testCompile "org.robolectric:robolectric:3.1.2"
     testCompile 'junit:junit:4.12'
+}
+
+lintCleaner {
+    lintXmlPath "${buildDir}/reports/lint-results.xml"
+    outputPath "${buildDir}/reports/lintlog.txt"
 }
