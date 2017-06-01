@@ -3,9 +3,8 @@
     package="com.zero.androidtranningdemo">
 
     <uses-permission android:name="android.permission.NFC" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
 
     <!-- 这个权限用于进行网络定位 -->

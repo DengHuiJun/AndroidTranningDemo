@@ -169,7 +169,8 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         mItems.add(commonItem);
     }
 
-    private List<RecyclerMainItem> sort(List<RecyclerMainItem> items) {
+    private List<RecyclerMainItem> sort(List<RecyclerMainItem> itemList) {
+        List<RecyclerMainItem> items = itemList;
         int len = items.size();
         int[] keys = new int[len];
         for(int i=0; i<len; i++) {

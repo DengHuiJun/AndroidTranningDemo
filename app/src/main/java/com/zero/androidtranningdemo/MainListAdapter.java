@@ -44,6 +44,11 @@ public class MainListAdapter extends RecyclerView.Adapter<MainListAdapter.ItemVi
         mItemClickListener = (OnMainItemClickListener) context;
     }
 
+    public void setItems(List<RecyclerMainItem> items) {
+        this.items = items;
+        notifyAll();
+    }
+
     public void setHeaderView(View headerView) {
         mHeaderView = headerView;
         notifyItemInserted(0);

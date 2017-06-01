@@ -2,14 +2,24 @@ package com.zero.androidtranningdemo.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.zero.androidtranningdemo.AppContext;
 import com.zero.androidtranningdemo.BaseActionBarActivity;
 import com.zero.androidtranningdemo.BuildConfig;
 import com.zero.androidtranningdemo.R;
 import com.zero.androidtranningdemo.fragment.BlankFragment;
+import com.zero.androidtranningdemo.utils.MediaFile;
 
+import java.io.File;
+import java.io.IOException;
+
+import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 /**
  * Created by zero on 15-8-26.
@@ -17,19 +27,48 @@ import butterknife.ButterKnife;
 public class CommonTestActivity extends BaseActionBarActivity {
     private static final String TAG = "FilterEmojiActivity";
 
+    private static final String path = Environment.getExternalStorageDirectory() + File.separator + ".demo_test" + File.separator
+            + "photos"
+            ;
+
+    @Bind(R.id.single_tv)
+    TextView tv;
+
+    @OnClick(R.id.btn)
+    public void createEvent() {
+        if (createDir(path)) {
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_common_test);
         ButterKnife.bind(this);
         Log.d(TAG, "onCreate Sec : " + BuildConfig.APPLICATION_ID);
+        tv.setText(path + "time:" + AppContext.sTime + AppContext.sName);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().add(R.id.content, BlankFragment.newInstance("",""))
-                    .addToBackStack(null)
-                    .commit();
+    }
+
+    // FIXME: 2017/5/16 部分4.4机型(华为meta7，电信版) 上创建目录失败
+    private boolean createDir(String path) {
+        boolean result = false;
+
+        File dir = new File(path);
+        //如果目录不存在的话则新建一个
+        if (!dir.exists()) {
+            result = dir.mkdirs();
+        }
+        if (!result) {
+            MediaFile mf = new MediaFile(mContext.getContentResolver(), dir);
+            try {
+                result = mf.mkdir();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
+        return result;
     }
 
     @Override
