@@ -25,6 +25,7 @@ import com.zero.androidtranningdemo.bdlbs.LBSActivity;
 import com.zero.androidtranningdemo.contentshare.NFCShareActivity;
 import com.zero.androidtranningdemo.contentshare.ShareFilesActivity;
 import com.zero.androidtranningdemo.contentshare.SimpleDateActivity;
+import com.zero.androidtranningdemo.customeview.CustomViewActivity;
 import com.zero.androidtranningdemo.glide.GlideActivity;
 import com.zero.androidtranningdemo.multimedia.TestServiceActivity;
 import com.zero.androidtranningdemo.utils.AppUtils;
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
     private static final int ITEM_ID_TEST_VIEW_DRAG_HELPER = 16;
     private static final int ITEM_ID_LBS = 17;
     private static final int ITEM_ID_COMMON_TEST = 1;
+    private static final int ITEM_ID_CUSTOME_VIEW = 19;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +169,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
         RecyclerMainItem commonItem = new RecyclerMainItem(ITEM_ID_COMMON_TEST);
         commonItem.setTitle("公共测试");
         mItems.add(commonItem);
+
+        RecyclerMainItem viewItem = new RecyclerMainItem(ITEM_ID_CUSTOME_VIEW);
+        viewItem.setTitle("自定义View");
+        mItems.add(viewItem);
     }
 
     private List<RecyclerMainItem> sort(List<RecyclerMainItem> itemList) {
@@ -289,6 +295,10 @@ public class MainActivity extends AppCompatActivity implements MainListAdapter.O
 
             case ITEM_ID_COMMON_TEST:
                 AppUtils.toAnActivity(this, CommonTestActivity.class);
+                break;
+
+            case ITEM_ID_CUSTOME_VIEW:
+                AppUtils.toAnActivity(this, CustomViewActivity.class);
                 break;
 
             default:

@@ -9,11 +9,16 @@ public class CleanUnusedResourcesPlugin implements Plugin<Project> {
 
     @Override
     void apply(Project project) {
-
+        /*
         project.extensions.create(EXTENSION_NAME, PluginExtension, project)
 
         project.tasks.create(CleanTask.NAME, CleanTask) {
             println 'load done!'
+        }
+        */
+
+        project.tasks.create(ClassDependencyTask.NAME, ClassDependencyTask) {
+            println 'start ClassDependencyTask~'
         }
     }
 }

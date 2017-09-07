@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidTranningDemo.iml" filepath="$PROJECT_DIR$/AndroidTranningDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lintplugin/lintplugin.iml" filepath="$PROJECT_DIR$/lintplugin/lintplugin.iml" />
     </modules>
   </component>
 </project>

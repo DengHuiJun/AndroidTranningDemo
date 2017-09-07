@@ -42,4 +42,8 @@ public class AppContext extends Application {
         }
         return processName;
     }
+
+    public static String printMermory() {
+        return "";
+    }
 }

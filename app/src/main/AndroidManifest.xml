@@ -38,11 +38,11 @@
         android:required="true" />
 
     <application
+        android:name=".AppContext"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/BaseTheme"
-        android:name=".AppContext" >
+        android:theme="@style/BaseTheme">
         <uses-library android:name="android.test.runner" />
 
         <activity
@@ -51,11 +51,7 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".contentshare.SimpleDateActivity">
             <intent-filter>
@@ -141,7 +137,14 @@
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="MNCURTZVtupSwv4lRyQL896tGWNXkyue" />
 
-        <activity android:name=".bdlbs.LBSActivity"/>
+        <activity android:name=".bdlbs.LBSActivity" />
+        <activity android:name=".activities.CoreUtilsActivity" />
+        <activity android:name=".customeview.CustomViewActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

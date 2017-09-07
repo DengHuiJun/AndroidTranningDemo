@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'me.denghui.cleaner'
+//apply plugin: 'me.denghui.cleaner'
 
 android {
 
@@ -7,7 +7,7 @@ android {
     buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId "com.zero.androidtranningdemo"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -16,6 +16,9 @@ android {
             annotationProcessorOptions {
                 includeCompileClasspath true
             }
+        }
+        ndk {
+            abiFilters 'armeabi'
         }
 
     }
@@ -48,6 +51,10 @@ android {
             testCoverageEnabled true
         }
 
+//        prod {
+//            signingConfig signingConfigs.tDebug
+//        }
+
     }
 
     sourceSets {
@@ -61,6 +68,8 @@ android {
     }
 
     productFlavors {
+        free {}
+        pro {}
     }
 
 //    testOptions {
@@ -69,30 +78,38 @@ android {
 //            systemProperty 'robolectric.dependency.repo.id', 'alimaven'
 //        }
 //    }
+
+    android.applicationVariants.all { variant ->
+//        def buildType = variant.buildType.name
+        println variant.name.capitalize()
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile files('libs/BaiduLBS_Android.jar')
-    compile "com.android.support:appcompat-v7:25.3.1"
-    compile "com.android.support:design:25.3.1"
-    compile "com.android.support:recyclerview-v7:25.3.1"
-    compile "com.android.support:support-v4:25.3.1"
 
 
+
+
+
+
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.android.support:support-core-utils:25.3.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.picasso:picasso:2.5.2'
-
     compile 'in.srain.cube:ultra-ptr:1.0.11'
     compile 'com.github.bumptech.glide:glide:3.7.0'
-
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-
-    testCompile "org.robolectric:robolectric:3.1.2"
+    testCompile 'org.robolectric:robolectric:3.1.2'
     testCompile 'junit:junit:4.12'
 }
 
-lintCleaner {
-    lintXmlPath "${buildDir}/reports/lint-results.xml"
-    outputPath "${buildDir}/reports/lintlog.txt"
-}
+//lintCleaner {
+//    lintXmlPath "${buildDir}/reports/lint-results.xml"
+//    outputPath "${buildDir}/reports/lintlog.txt"
+//}

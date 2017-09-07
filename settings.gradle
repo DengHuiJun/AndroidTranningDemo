@@ -1,1 +1,2 @@
-include ':app','lintplugin'
+include ':app'
+//include ':lintplugin'

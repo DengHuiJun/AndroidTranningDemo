@@ -2,7 +2,10 @@
 <resources>
     <color name="title_bar_bg">#3498DB</color>
     <color name="title_bar_btn_bg">#1ABC9C</color>
-    <color name="font_color">#ECF0F1</color>
+    <color name="font_color">#333333</color>
 
     <color name="main_activity_bg">#e8e8e8</color>
+
+    <color name="common_item_bg_pressed">#fffff8d7</color>
+    <color name="common_list_item_bg_normal">@color/main_activity_bg</color>
 </resources>
